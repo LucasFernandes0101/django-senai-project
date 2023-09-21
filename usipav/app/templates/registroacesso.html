@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Lista de Registro de Acessos{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="mt-4">Lista de Registro de Acessos</h1>
+
+    <table class="table table-striped mt-4 text-left"> <!-- Adicione a classe "text-left" aqui -->
+      <thead>
+        <tr>
+          <th scope="col">Página</th>
+          <th scope="col">Data de Acesso</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for acesso in acessos %}
+        <tr>
+          <td>{{ acesso.pagina.topico }}</td>
+          <td>{{ acesso.data_acesso }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

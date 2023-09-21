@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <title>{% block title %}Lucas Cassetari{% endblock %}</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container">
+        <a class="navbar-brand" href="/app">Lucas Cassetari</a>
+        <button
+          class="navbar-toggler"
+          id="menu-toggle"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="navbar-nav" id="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'app:calculadora' %}"
+              >Calculadora</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'app:linguagens' %}"
+              >Linguagens de Programação</a
+            >
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'app:registro-acesso' %}">Registros de Acesso</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'app:criar-produto' %}">Cadastro de Produtos</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'app:lista-produtos' %}">Listagem de Produtos</a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Conteúdo da Página -->
+    <div class="container mt-4">{% block content %}{% endblock %}</div>
+  </body>
+</html>

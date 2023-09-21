@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+Calculadora
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css"
+    integrity="sha512-VV+YZ0ouwpIeVtKjKNw8H/s0COyOcwyduV7MkOoRbrV7O/nx13Zu3q5r5w5ZYVBoF+kfHHy/B3q4X4+6siNk6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="{% static 'css/calculadora.css' %}" />
+
+<div class="container d-flex justify-content-center">
+    <div class="row mt-5 align-items-center">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title mb-4">Calculadora</h5>
+                <input type="text" class="form-control mb-2" id="visor" disabled>
+                <div class="row g-3">
+                    <div class="col-3">
+                        <button type="button" class="btn btn-secondary col-3" onclick="pressNumber(7)">7</button>
+                        <button type="button" class="btn btn-secondary col-3" onclick="pressNumber(8)">8</button>
+                        <button type="button" class="btn btn-secondary col-3" onclick="pressNumber(9)">9</button>
+                        <button type="button" class="btn btn-warning col-3" onclick="pressOperator('/')">/</button>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-3">
+                            <button type="button" class="btn btn-secondary col-3" onclick="pressNumber(4)">4</button>
+                            <button type="button" class="btn btn-secondary col-3" onclick="pressNumber(5)">5</button>
+                            <button type="button" class="btn btn-secondary col-3" onclick="pressNumber(6)">6</button>
+                            <button type="button" class="btn btn-warning col-3" onclick="pressOperator('*')">*</button>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-3">
+                            <button type="button" class="btn btn-secondary col-3" onclick="pressNumber(1)">1</button>
+                            <button type="button" class="btn btn-secondary col-3" onclick="pressNumber(2)">2</button>
+                            <button type="button" class="btn btn-secondary col-3" onclick="pressNumber(3)">3</button>
+                            <button type="button" class="btn btn-warning col-3" onclick="pressOperator('-')">-</button>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-3">
+                            <button type="button" class="btn btn-secondary col-3" onclick="pressNumber(0)">0</button>
+                            <button type="button" class="btn btn-secondary col-3" onclick="pressDot()">.</button>
+                            <button type="button" class="btn btn-secondary col-3" onclick="pressPlusMinus()">+/-</button>
+                            <button type="button" class="btn btn-warning col-3" onclick="pressOperator('+')">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <button type="button" class="btn btn-danger col-12" onclick="clearCalc()">C</button>
+                    <button type="button" class="btn btn-primary col-12" onclick="calculate()">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<footer>
+    <div class="container d-flex justify-content-center">
+        <div class="row mt-5 align-items-center">
+            <h4 class="footer-title">Desenvolvido por Lucas Fernandes Cassetari</h4>
+        </div>
+    </div>
+</footer>
+<script src="{% static 'js\calculadora.js' %}"></script>
+{% endblock %}

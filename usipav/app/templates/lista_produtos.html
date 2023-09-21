@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Lista de Produtos</h1>
+    <ul class="list-group">
+        {% for produto in produtos %}
+        <li class="list-group-item">{{ produto.nome }} - R$ {{ produto.preco }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
